@@ -1,7 +1,9 @@
 # JCSAM
 [![DOI](https://zenodo.org/badge/1179423272.svg)](https://doi.org/10.5281/zenodo.18974559)
-This repo is the official implementation for:\
-[Enhanced Segmentation of Jaw Cysts Using a High-Frequency Awareness Adapted Segment Anything Model] submitted to *The Visual Computer*
+
+This repo is the official implementation for:
+**Enhanced Segmentation of Jaw Cysts Using a High-Frequency Awareness Adapted Segment Anything Model**, submitted to *The Visual Computer*.
+We strongly urge all users of this code to cite the above manuscript in their publications and research.
 
 ## Installation
 Following [Segment Anything](https://github.com/facebookresearch/segment-anything), `python=3.8.16`, `pytorch=1.8.0`, and `torchvision=0.9.0` are used in SAMUS.
