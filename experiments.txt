@@ -1,0 +1,515 @@
+Cyst SAMUS +DEconv
+mean_dice:93.00±4.01
+mean_hd95:4.37±2.21
+mean_iou:87.15±6.59
+mean_acc:99.88±0.11
+mean_recall:93.62±5.44
+mean_mcc:93.03±3.86
+
+Cyst SAMUS +DEconv+HFF
+mean_dice:93.04±3.94
+mean_hd95:4.33±2.26
+mean_iou:87.23±6.49
+mean_acc:99.88±0.11
+mean_recall:93.61±5.36
+mean_mcc:93.07±3.80
+
+Cyst SAMUS DEconv + HFF2.1
+mean_dice:93.12±3.91
+mean_hd95:4.35±2.20
+mean_iou:87.36±6.40
+mean_acc:99.88±0.11
+mean_recall:93.58±5.30
+mean_mcc:93.15±3.77
+
+Cyst SAMUS DEB2+HFF2.1+de
+mean_dice:92.97±4.21
+mean_hd95:4.33±2.19
+mean_iou:87.13±6.80
+mean_acc:99.88±0.10
+mean_recall:92.30±6.55
+mean_mcc:93.02±4.00
+
+Cyst SAMUS DEconv + HFF2.2(双输入)
+mean_dice:93.00±3.82
+mean_hd95:4.37±2.20
+mean_iou:87.14±6.27
+mean_acc:99.88±0.11
+mean_recall:94.14±5.20
+mean_mcc:93.04±3.68
+
+*********************************************************************************
+
+Cyst数据集 SAMUS
+mean_dice:92.83±4.06
+mean_hd95:4.41±2.23
+mean_iou:86.88±6.65
+mean_acc:99.88±0.10
+mean_recall:93.09±5.78
+mean_mcc:92.87±3.92
+
+Cyst数据集 DCSAM 
+mean_dice:93.12±3.91
+mean_hd95:4.35±2.20
+mean_iou:87.35±6.41
+mean_acc:99.88±0.11
+mean_recall:93.58±5.30
+mean_mcc:93.14±3.77
+
+Cyst DCSAM 消融实验1 onlySAM
+mean_dice:90.54±6.24
+mean_hd95:5.27±2.77
+mean_iou:83.22±9.09
+mean_acc:99.84±0.13
+mean_recall:91.85±7.61
+mean_mcc:90.66±5.85
+
+Cyst DCSAM 消融实验2 SAM+DEconv
+mean_dice:91.76±4.95
+mean_hd95:4.77±2.46
+mean_iou:85.12±7.76
+mean_acc:99.86±0.12
+mean_recall:93.21±6.61
+mean_mcc:91.82±4.75
+
+Cyst DCSAM 消融实验3 SAM+DEconv+CBFF
+mean_dice:92.82±3.87
+mean_hd95:4.50±2.20
+mean_iou:86.84±6.38
+mean_acc:99.88±0.10
+mean_recall:93.43±5.27
+mean_mcc:92.86±3.75
+
+Cyst DCSAM 消融实验4 SAM+P_Adapter
+mean_dice:92.30±4.79
+mean_hd95:4.59±2.25
+mean_iou:86.04±7.60
+mean_acc:99.87±0.11
+mean_recall:92.78±6.80
+mean_mcc:92.36±4.57
+
+Cyst DCSAM 消融实验5 SAM+DEconv+CBFF+P-Adapter
+mean_dice:92.84±4.18
+mean_hd95:4.39±2.02
+mean_iou:86.91±6.76
+mean_acc:99.88±0.10
+mean_recall:94.08±6.36
+mean_mcc:92.89±3.99
+
+Cyst DCSAM 消融验验6 最终模型
+mean_dice:93.12±3.91
+mean_hd95:4.35±2.20
+mean_iou:87.35±6.41
+mean_acc:99.88±0.11
+mean_recall:93.58±5.30
+mean_mcc:93.14±3.77
+
+ISIC数据集 SAMUS
+mean_dice:85.87±14.89
+mean_hd95:30.47±29.49
+mean_iou:77.54±17.95
+mean_acc:93.61±9.22
+mean_recall:85.07±15.73
+mean_mcc:82.37±16.06
+
+ISIC数据集 DCSAM 
+mean_dice:86.96±13.74
+mean_hd95:29.15±27.95
+mean_iou:78.91±16.61
+mean_acc:94.20±8.54
+mean_recall:86.74±16.18
+mean_mcc:83.52±14.69
+
+ISIC DCSAM ISIC消融实验1 OnlySAM
+mean_dice:83.85±16.30
+mean_hd95:32.00±29.70
+mean_iou:74.87±19.37
+mean_acc:92.67±10.63
+mean_recall:82.47±19.63
+mean_mcc:80.30±17.28
+
+ISIC DCSAM ISIC消融实验2 ViT+DEconv
+mean_dice:84.66±15.17
+mean_hd95:32.09±30.78
+mean_iou:75.78±18.36
+mean_acc:93.03±9.87
+mean_recall:83.76±18.17
+mean_mcc:80.89±16.42
+
+ISIC DCSAM ISIC消融实验3 vit+DEconv+CBFF
+mean_dice:85.94±14.58
+mean_hd95:29.28±28.04
+mean_iou:77.55±17.56
+mean_acc:93.80±9.24
+mean_recall:83.37±17.32
+mean_mcc:82.72��15.62
+
+ISIC DCSAM ISIC���������验4 vit+P_Adapter
+mean_dice:86.45±13.48
+mean_hd95:29.07±28.14
+mean_iou:78.07±16.63
+mean_acc:93.92±8.91
+mean_recall:84.80±16.58
+mean_mcc:82.90±15.04
+
+ISIC DCSAM ISIC消融实验5 vit+DEconv+CBFF+P_Adapter
+mean_dice:85.84±14.74
+mean_hd95:29.17±28.02
+mean_iou:77.46±17.83
+mean_acc:93.86±8.88
+mean_recall:82.90±17.25
+mean_mcc:82.63±15.67
+
+ISIC DCSAM ISIC消融实验6 最终模型
+mean_dice:86.96±13.74
+mean_hd95:29.15±27.95
+mean_iou:78.91±16.61
+mean_acc:94.20±8.54
+mean_recall:86.74±16.18
+mean_mcc:83.52±14.69
+
+Cyst SAMUS
+mean_dice:93.22±3.75
+mean_hd95:4.35±2.14
+mean_iou:87.52±6.27
+mean_acc:99.88±0.10
+mean_recall:93.30±5.46
+mean_mcc:93.25±3.63
+Cyst DCSAM 卷积消融：普通卷积（VC）
+mean_dice:92.81±4.28
+mean_hd95:4.52±2.35
+mean_iou:86.86±6.89
+mean_acc:99.87±0.11
+mean_recall:93.92±4.95
+mean_mcc:92.85±4.11
+
+Cyst DCSAM 卷积消融：细节增强卷积（DEC）
+mean_dice:93.12��3.91
+mean_hd95:4.35��2.20
+mean_iou:87.35��6.41
+mean_acc:99.88±0.11
+mean_recall:93.58±5.30
+mean_mcc:93.14±3.77
+
+Cyst DCSAM 卷积消融：连续扩张卷积（CDC）
+mean_dice:92.97±3.86
+mean_hd95:4.39±2.17
+mean_iou:87.09±6.37
+mean_acc:99.88±0.10
+mean_recall:93.06±5.58
+mean_mcc:93.00±3.74
+
+Cyst DCSAM 卷积消融：重聚焦卷积（REFC）
+mean_dice:92.76±3.95
+mean_hd95:4.46±2.34
+mean_iou:86.75±6.52
+mean_acc:99.87±0.11
+mean_recall:92.56±5.84
+mean_mcc:92.80±3.83
+
+Cyst DCSAM 适配器消融：不加特征适配器和位置适配器
+mean_dice:92.82±3.87
+mean_hd95:4.50±2.20
+mean_iou:86.84±6.38
+mean_acc:99.88±0.10
+mean_recall:93.43±5.27
+mean_mcc:92.86±3.75
+
+Cyst DCSAM 适配器消融：只加位置适配器（P_Adapter）
+mean_dice:92.84±4.18
+mean_hd95:4.39±2.02
+mean_iou:86.91±6.76
+mean_acc:99.88±0.10
+mean_recall:93.32±6.36
+mean_mcc:92.89±3.99
+
+Cyst DCSAM 适配器消融：只加特征适配器（P_Adapter）
+mean_dice:92.93±4.41
+mean_hd95:4.45±2.31
+mean_iou:87.12±5.76
+mean_acc:99.88��0.10
+mean_recall:93.45±5.86
+mean_mcc:93.03±4.19
+
+Cyst DCSAM 适配器消融：同时加特征适配器和位置适配器（F_Adapter+P_Adapter）
+mean_dice:93.12±3.91
+mean_hd95:4.35±2.20
+mean_iou:87.35±6.41
+mean_acc:99.88±0.11
+mean_recall:93.58±5.30
+mean_mcc:93.14±3.77
+Cyst SAMUS
+mean_dice:93.16±3.87
+mean_hd95:4.34±2.32
+mean_iou:87.43±6.39
+mean_acc:99.88±0.10
+mean_recall:93.48±5.57
+mean_mcc:93.20±3.73
+Cyst SAMUS
+mean_dice:93.01±3.94
+mean_hd95:4.42±2.31
+mean_iou:87.17±6.46
+mean_acc:99.88±0.11
+mean_recall:93.91±5.17
+mean_mcc:93.05±3.80
+Cyst SAMUS 特征融合消融：跨分支注意力（CBA）
+mean_dice:92.91±4.10
+mean_hd95:4.46±2.41
+mean_iou:87.01±6.68
+mean_acc:99.88±0.10
+mean_recall:93.61±5.94
+mean_mcc:92.96±3.94
+Cyst SAMUS 特征融合消融：特征融合单元（FCU）
+mean_dice:92.30±4.81
+mean_hd95:4.72±2.40
+mean_iou:86.03±7.49
+mean_acc:99.87±0.11
+mean_recall:92.38±6.23
+mean_mcc:92.34±4.64
+
+Cyst SAMUS 特征融合消融：内容引导注意力（CGA）
+mean_dice:92.10±4.64
+mean_hd95:4.69±2.50
+mean_iou:85.67±7.25
+mean_acc:99.86±0.11
+mean_recall:92.93±5.90
+mean_mcc:92.14±4.48
+Cyst SAMUS 可视化DCSAM
+mean_dice:93.12±3.91
+mean_hd95:4.35±2.20
+mean_iou:87.35±6.41
+mean_acc:99.88±0.11
+mean_recall:93.58±5.30
+mean_mcc:93.14±3.77
+Cyst SAMUS 可视化DS-TransUnet
+mean_dice:92.89±4.33
+mean_hd95:4.43±2.26
+mean_iou:87.01±6.90
+mean_acc:99.88±0.11
+mean_recall:93.29±5.92
+mean_mcc:92.93±4.14
+Cyst SAMUS 可视化MedSAM
+mean_dice:91.82±4.36
+mean_hd95:4.75±2.41
+mean_iou:85.15±7.03
+mean_acc:99.86±0.11
+mean_recall:92.42±6.13
+mean_mcc:91.87±4.21
+Cyst SAMUS 可视化SAM
+mean_dice:90.39±6.14
+mean_hd95:5.08±3.05
+mean_iou:82.98±9.06
+mean_acc:99.84±0.15
+mean_recall:90.98±8.53
+mean_mcc:90.53±5.81
+Cyst SAMUS 可视化SwinUnet
+mean_dice:89.13±6.59
+mean_hd95:5.55±3.39
+mean_iou:80.96±9.68
+mean_acc:99.81±0.17
+mean_recall:89.24±9.41
+mean_mcc:89.29±6.28
+Cyst SAMUS 可视化 TransUnet
+mean_dice:86.25±8.84
+mean_hd95:6.34±3.77
+mean_iou:76.74±11.94
+mean_acc:99.76��0.22
+mean_recall:91.13±10.15
+mean_mcc:86.62±8.20
+Cyst SAMUS 可视化 H2Former
+mean_dice:92.27±4.18
+mean_hd95:4.61±2.25
+mean_iou:85.91±6.81
+mean_acc:99.87±0.11
+mean_recall:93.65±5.60
+mean_mcc:92.31±4.03
+Cyst SAMUS
+mean_dice:92.83±4.07
+mean_hd95:4.40±2.23
+mean_iou:86.88±6.66
+mean_acc:99.88±0.10
+mean_recall:93.09±5.78
+mean_mcc:92.87±3.92
+
+*********************************************************************************************
+
+CVC SAMUS CVC数据集上DCSAM
+mean_dice:91.58±9.48
+mean_hd95:16.67±15.64
+mean_iou:85.55±12.53
+mean_acc:98.56±3.19
+mean_recall:91.98±10.59
+mean_mcc:91.23±8.81
+
+CVC SAMUS CVC数据集上SAM
+mean_dice:83.00±13.14
+mean_hd95:24.28±17.12
+mean_iou:72.81±16.85
+mean_acc:97.10±3.61
+mean_recall:85.56±14.80
+mean_mcc:82.54±12.42
+CVC SAMUS samus
+mean_dice:91.52±11.37
+mean_hd95:16.62±16.00
+mean_iou:85.80±13.92
+mean_acc:98.57±3.21
+mean_recall:91.72±10.93
+mean_mcc:91.23±10.49
+CVC SAMUS CVC数据集上SAMUS
+mean_dice:90.88±12.32
+mean_hd95:16.54±14.39
+mean_iou:84.89��14.54
+mean_acc:98.64±1.93
+mean_recall:91.80±11.53
+mean_mcc:90.54±11.76
+
+CVC SAMUS CVC数据集上MedSAM
+mean_dice:86.04±12.11
+mean_hd95:21.46±15.81
+mean_iou:77.10±15.22
+mean_acc:97.59±3.67
+mean_recall:87.25±13.29
+mean_mcc:85.60±11.23
+
+CVC SAMUS CVC上的Unet
+mean_dice:85.62±11.08
+mean_hd95:21.81±16.46
+mean_iou:76.27±14.85
+mean_acc:97.31±4.03
+mean_recall:86.68±13.70
+mean_mcc:85.04±10.72
+
+CVC SAMUS CVC上的Swinunet
+mean_dice:86.27±13.71
+mean_hd95:20.86±18.23
+mean_iou:77.80±16.35
+mean_acc:97.55±4.15
+mean_recall:85.28±15.65
+mean_mcc:85.99±12.42
+
+CVC SAMUS CVC上的Unet++
+mean_dice:87.26±12.34
+mean_hd95:20.22±16.55
+mean_iou:79.01±14.99
+mean_acc:97.82±3.79
+mean_recall:87.54±13.44
+mean_mcc:86.88±11.19
+
+CVC SAMUS
+mean_dice:88.36±12.94
+mean_hd95:20.75±17.54
+mean_iou:80.91±15.50
+mean_acc:97.97±3.64
+mean_recall:92.20±10.97
+mean_mcc:88.05±11.84
+CVC SAMUS
+mean_dice:89.54±14.40
+mean_hd95:18.70±17.83
+mean_iou:83.11±16.11
+mean_acc:98.20±3.70
+mean_recall:90.21±13.60
+mean_mcc:89.16±13.88
+
+CVC SAMUS CVC上的JCSAM
+mean_dice:91.82±8.30
+mean_hd95:16.02±13.19
+mean_iou:85.74±11.43
+mean_acc:98.69±1.75
+mean_recall:93.24±8.25
+mean_mcc:91.42±7.60
+CVC SAMUS CVC上的SAMUS
+mean_dice:90.57±9.83
+mean_hd95:17.53±15.14
+mean_iou:83.96±13.56
+mean_acc:98.47±2.64
+mean_recall:90.93±11.03
+mean_mcc:90.19±9.28
+CVC SAMUS CVC上的JCSAM
+mean_dice:91.58±9.48
+mean_hd95:16.67±15.64
+mean_iou:85.55±12.53
+mean_acc:98.56±3.19
+mean_recall:91.98±10.59
+mean_mcc:91.23±8.82
+
+**************************************************************************************
+ISIC SAMUS ISIC上的JCSAM
+mean_dice:86.96±13.74
+mean_hd95:29.15±27.95
+mean_iou:78.91±16.61
+mean_acc:94.20±8.54
+mean_recall:86.74±16.18
+mean_mcc:83.52±14.69
+
+ISIC SAMUS ISIC上的MedSAM
+mean_dice:84.21±14.41
+mean_hd95:34.18±31.52
+mean_iou:74.80±16.95
+mean_acc:92.51±9.74
+mean_recall:88.00±16.07
+mean_mcc:79.70±15.77
+
+ISIC SAMUS ISIC上的SAM
+mean_dice:83.17±15.16
+mean_hd95:35.41±32.16
+mean_iou:73.50±18.13
+mean_acc:91.91±10.37
+mean_recall:85.39±15.57
+mean_mcc:78.35±17.29
+ISIC SAMUS ISIC上的TransUnet
+mean_dice:84.78±14.17
+mean_hd95:32.63±27.97
+mean_iou:75.63±16.94
+mean_acc:93.04±9.00
+mean_recall:88.92±14.88
+mean_mcc:80.44±15.23
+ISIC SAMUS ISIC上的H2Former
+mean_dice:84.50±15.23
+mean_hd95:31.77±29.58
+mean_iou:75.55±18.47
+mean_acc:92.80±10.03
+mean_recall:83.65±18.19
+mean_mcc:80.66±16.96
+ISIC SAMUS ISIC上的SwinuNet
+mean_dice:84.24±15.94
+mean_hd95:30.89±30.17
+mean_iou:75.39±19.19
+mean_acc:92.74±11.03
+mean_recall:81.20±20.16
+mean_mcc:80.89±17.56
+ISIC SAMUS
+mean_dice:86.30±13.89
+mean_hd95:28.96±27.34
+mean_iou:77.92±16.77
+mean_acc:93.92±8.84
+mean_recall:84.62±16.63
+mean_mcc:82.87±15.01
+ISIC SAMUS
+mean_dice:84.24±15.94
+mean_hd95:30.89±30.17
+mean_iou:75.39±19.19
+mean_acc:92.74±11.03
+mean_recall:81.20±20.16
+mean_mcc:80.89±17.56
+ISIC SAMUS
+mean_dice:85.41±14.91
+mean_hd95:30.13±27.80
+mean_iou:76.83±17.89
+mean_acc:93.65±9.07
+mean_recall:83.12±17.58
+mean_mcc:81.94±15.79
+ISIC SAMUS
+mean_dice:84.93±15.40
+mean_hd95:30.59±28.95
+mean_iou:76.23±18.34
+mean_acc:93.21±10.22
+mean_recall:83.49±18.74
+mean_mcc:81.46±16.46
+
+Cyst SAMUS
+mean_dice:85.95±8.93
+mean_hd95:6.25±4.74
+mean_iou:76.30±12.04
+mean_acc:99.73±0.32
+mean_recall:80.87±12.44
+mean_mcc:86.48±8.15
