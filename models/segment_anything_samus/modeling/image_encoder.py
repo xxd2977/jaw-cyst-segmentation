@@ -1,4 +1,4 @@
-#消融实验最终模型
+
 from tkinter import X
 from unittest import skip
 from unittest.mock import patch
@@ -54,15 +54,15 @@ class ImageEncoderViT(nn.Module):
         super().__init__()
         self.img_size = img_size
 
-        self.cnn_embed = SingleCNNEmbed(patchsize=patch_size, in_chans=3, embed_dim=embed_dim) # new to sam,cnn分支提取局部特征
-        self.patch_embed = PatchEmbed0(#将图像分成小块
+        self.cnn_embed = SingleCNNEmbed(patchsize=patch_size, in_chans=3, embed_dim=embed_dim) # new to sam,cnn
+        self.patch_embed = PatchEmbed0(
             kernel_size=(patch_size, patch_size),
             stride=(patch_size, patch_size),
             in_chans=3,
             embed_dim=embed_dim,
         )
 
-        self.pos_embed: Optional[nn.Parameter] = None#位置嵌入
+        self.pos_embed: Optional[nn.Parameter] = None
         if use_abs_pos:
             # Initialize absolute positional embedding with pretrain image size.
             self.pos_embed = nn.Parameter(
@@ -70,10 +70,10 @@ class ImageEncoderViT(nn.Module):
             )
             self.post_pos_embed = PostPosEmbed(embed_dim=embed_dim, ori_feature_size=1024//16, new_feature_size=img_size//patch_size) # new to sam
 
-        self.blocks = nn.ModuleList()#vit块
+        self.blocks = nn.ModuleList()
 
 
-        for i in range(depth):#根据depth确定有几个vit块
+        for i in range(depth):
             block = ParaBlock(
                 dim=embed_dim,
                 num_heads=num_heads,
@@ -88,7 +88,7 @@ class ImageEncoderViT(nn.Module):
                 depth = i,
             )
             self.blocks.append(block)
-        self.neck = nn.Sequential(#最后输出部分
+        self.neck = nn.Sequential(
             nn.Conv2d(
                 embed_dim,
                 out_chans,
@@ -105,12 +105,12 @@ class ImageEncoderViT(nn.Module):
             ),
             LayerNorm2d(out_chans),
         )
-        self.input_Adapter = Adapter(embed_dim)#输入适配器
+        self.input_Adapter = Adapter(embed_dim)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        if x.size()[1] == 1:#将通道数变成3
+        if x.size()[1] == 1:
             x = x.repeat(1,3,1,1) # b c h w
-        cnnx = self.cnn_embed(x) # b h w c , cnn分支
+        cnnx = self.cnn_embed(x) # b h w c
         x = self.patch_embed(x) # b h w c
         x = self.input_Adapter(x)
 
@@ -337,7 +337,7 @@ class ParaBlock(nn.Module):
 
     def forward(self, x: torch.Tensor, cnnx: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         shortcut = x
-        if self.window_size == 0:#全局注意力(global vit)
+        if self.window_size == 0:
 
             shortcut = shortcut.permute(0, 3, 2, 1)#b c h w
             cnnx = cnnx.permute(0, 3, 2, 1)#b c h w
@@ -351,11 +351,11 @@ class ParaBlock(nn.Module):
 
         x = self.norm1(x)
         # Window partition
-        if self.window_size > 0:#局部注意力(windows vit)
+        if self.window_size > 0:
             H, W = x.shape[1], x.shape[2]
             x, pad_hw = window_partition(x, self.window_size)
 
-        # if self.window_size == 0:#全局注意力(global vit)
+        # if self.window_size == 0:
         #     sax = self.Space_Adapter(x, cnnx, cnnx) # b h w c
         #     x = x + sax
         #     cnnx = self.refine_Adapter(cnnx.permute(0, 3, 1, 2)).permute(0, 2, 3, 1)
@@ -554,7 +554,7 @@ def add_decomposed_rel_pos(
     return attn
 
 
-class DoubleConv(nn.Module):#双卷积
+class DoubleConv(nn.Module):
     """(convolution => [BN] => ReLU) * 2"""
 
     def __init__(self, in_channels, out_channels, mid_channels=None, kernel_size=3):
@@ -574,7 +574,7 @@ class DoubleConv(nn.Module):#双卷积
         return self.double_conv(x)
 
 
-class Down(nn.Module):#最大池化后跟一个双卷积
+class Down(nn.Module):
     """Downscaling with maxpool then double conv"""
 
     def __init__(self, in_channels, out_channels):
@@ -588,7 +588,7 @@ class Down(nn.Module):#最大池化后跟一个双卷积
         return self.maxpool_conv(x)
 
 
-class SingleConv(nn.Module):#单卷积
+class SingleConv(nn.Module):
     """Downscaling with maxpool then double conv"""
 
     def __init__(self, in_channels, out_channels, kernel_size=3):
@@ -603,7 +603,7 @@ class SingleConv(nn.Module):#单卷积
         return self.conv(x)
 
 
-class CNNEmbed(nn.Module):#双卷积后一个池化
+class CNNEmbed(nn.Module):
     """
     Image to Patch Embedding.
     """
@@ -641,7 +641,7 @@ class CNNEmbed(nn.Module):#双卷积后一个池化
         x = x.permute(0, 2, 3, 1)
         return x
 
-class SingleDown(nn.Module):#最大池化后跟一个单卷积
+class SingleDown(nn.Module):
     """Downscaling with maxpool then double conv"""
 
     def __init__(self, in_channels, out_channels, kernel_size=3):
@@ -656,7 +656,7 @@ class SingleDown(nn.Module):#最大池化后跟一个单卷积
     def forward(self, x):
         return self.maxpool_conv(x)
 
-class DeDown(nn.Module):#最大池化后跟一个单卷积
+class DeDown(nn.Module):
     """Downscaling with maxpool then double conv"""
 
     def __init__(self, in_channels, out_channels, kernel_size=3):
@@ -787,7 +787,7 @@ class DEConv(nn.Module):
         w4, b4 = self.conv1_4.get_weight()
         w5, b5 = self.conv1_5.weight, self.conv1_5.bias
 
-        # 将所有权重和偏差移动到相同的设备
+        
         w1, b1 = w1.to(x.device), b1.to(x.device)
         w2, b2 = w2.to(x.device), b2.to(x.device)
         w3, b3 = w3.to(x.device), b3.to(x.device)
@@ -800,7 +800,7 @@ class DEConv(nn.Module):
 
         return res
 
-class SingleCNNEmbed(nn.Module):#cnn特征提取分支
+class SingleCNNEmbed(nn.Module):
     """
     Image to Patch Embedding.
     """
