@@ -6,7 +6,7 @@ This repo is the official implementation for:
 We strongly urge all users of this code to cite the above manuscript in their publications and research.
 
 ## Installation
-Following [Segment Anything](https://github.com/facebookresearch/segment-anything), `python=3.8.16`, `pytorch=1.8.0`, and `torchvision=0.9.0` are used in SAMUS.
+Following [Segment Anything](https://github.com/facebookresearch/segment-anything), `python=3.8.16`, `pytorch=1.8.0`, and `torchvision=0.9.0` are used in JCSAMJCSAM.
 
 1. Clone the repository.
     ```
