@@ -100,24 +100,24 @@ from sklearn.metrics import matthews_corrcoef
 def eval_mask_slice2(valloader, model, criterion, opt, args):
     model.eval()
     
-    # 创���热力�������存目录
+    
     cam_dir = os.path.join(opt.save_path, "cam_results")
     os.makedirs(cam_dir, exist_ok=True)
     
-    # 包装模型以适配GradCAM
+    
     class ModelWrapper(torch.nn.Module):
         def __init__(self, model):
             super(ModelWrapper, self).__init__()
             self.model = model
             
         def forward(self, x, pt=None):
-            # 保持与原模型相同的输入输出接口
+            
             return self.model(x, pt) if pt is not None else self.model(x)
 
     wrapped_model = ModelWrapper(model)
     
-    # Grad-CAM配置
-    target_layers = [wrapped_model.model.image_encoder.neck]  # 替换为实际的目标层
+    
+    target_layers = [wrapped_model.model.image_encoder.neck]  
     cam = GradCAM(model=wrapped_model, target_layers=target_layers)
 
     val_losses, mean_dice = 0, 0
@@ -142,27 +142,27 @@ def eval_mask_slice2(valloader, model, criterion, opt, args):
             sum_time += (time.time()-start_time)
 
         args.gen_cam = True
-        # 生成热力图
-        if args.gen_cam:  # 添加一个参数控制是否生成热力图
+        
+        if args.gen_cam:  
             for j in range(imgs.shape[0]):
-                # 准备输入图像
+              
                 img_np = imgs[j].cpu().numpy().transpose(1, 2, 0)
                 img_np = (img_np - img_np.min()) / (img_np.max() - img_np.min())
                 
-                # 获取预测mask作为目标
+             
                 pred_mask = torch.sigmoid(pred['masks'][j, 0]).cpu().numpy()
                 target_mask = (pred_mask > 0.5).astype(np.float32)
                 
-                # 创建目标
+           
                 targets = [SemanticSegmentationTarget(0, target_mask)]  # 假设类别0是目标
                 
-                # 生成热力图
+             
                 with torch.enable_grad():
                     grayscale_cam = cam(input_tensor=imgs[j:j+1], 
                                       targets=targets,
                                       additional_forward_args=pt[j:j+1] if pt is not None else None)[0, :]
                 
-                # 保存结果
+              
                 base_name = os.path.splitext(image_filename[j])[0]
                 cv2.imwrite(os.path.join(cam_dir, f"{base_name}_image.png"), img_np * 255)
                 cv2.imwrite(os.path.join(cam_dir, f"{base_name}_mask.png"), target_mask * 255)
@@ -206,7 +206,7 @@ def eval_mask_slice2(valloader, model, criterion, opt, args):
         
         eval_number += b
     
-    # 原有评估结果计算逻辑保持不变...
+   
     dices = dices[:eval_number, :] 
     hds = hds[:eval_number, :] 
     ious, accs, ses, sps, mccs = ious[:eval_number, :], accs[:eval_number, :], ses[:eval_number, :], sps[:eval_number, :], mccs[:eval_number, :]
